@@ -1,0 +1,71 @@
+@import '../../../styles/sass/main.scss';
+
+.todoSection{
+    position: relative;
+    padding: 5rem 0 1rem 0;
+
+
+    .addButton{
+        svg{
+            width: 2rem;
+            padding: 2rem 0 0 0;
+            fill: rgba(236,114,114,1);
+
+            cursor: pointer;
+            transition: all 0.15s ease;
+
+            &:hover{
+                fill: darken($color: rgba(236,114,114,1), $amount: 10)
+            }
+        }
+    }
+    
+    .todoContainer{
+        position: relative;
+        z-index: 100;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    
+        width: fit-content;
+        margin: 5rem auto;
+        padding: 1rem;
+        
+        background-color: rgba(255, 255, 255, 0.32);
+        backdrop-filter: blur(10px);
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+
+        h2{
+            color: rgba(6,98,59,1);
+        }
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        right: 58%;
+        width:150px;
+        height:150px;
+        background: linear-gradient(90deg, rgba(100,157,102,1) 0%, rgba(6,98,59,1) 100%);
+        border-radius:50%;
+
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 4%;
+        left: 58%;
+        width:150px;
+        height:150px;
+        background: linear-gradient(90deg, rgba(247,167,108,1) 0%, rgba(236,114,114,1) 100%);
+        border-radius:50%;
+
+    }
+}

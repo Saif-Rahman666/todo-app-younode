@@ -1,0 +1,83 @@
+@import '../../../styles/sass/main.scss';
+
+.cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    width: 20rem;
+    padding: 0.75rem;
+
+    cursor: pointer;
+    color: #4e4e4e;
+    transition: all 1s ease;
+    
+    &:not(:last-child){
+        border-bottom: 2px solid $primary-color;
+    }
+    
+    &:hover{
+        background: linear-gradient(90deg, rgba(236,236,236,0.5) 0%, rgba(255,255,255,1) 100%);
+    }
+
+    svg{
+        width: $font-size-title;
+        fill: $primary-color;
+        transition: all 0.15s ease;
+        &:hover{
+            fill: darken($color: $primary-color, $amount: 25);
+        }
+    }
+    .leftDetail{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .detailContainer{
+            p{
+                margin: 0;
+                padding-block: 2px;
+                
+                text-transform: capitalize;
+                
+                &:nth-child(1){
+                    position: relative;
+                    width: fit-content;
+                    
+                    font-size: $font-size-title;
+                    font-weight: $semi-bold;
+
+                    // color: rgba(236,114,114,1);
+
+                    transition: all 1s ease;
+                    
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        width: 0%;
+                        height: 2px;
+                        background-color: rgba(236,114,114,1);
+                        transition: all 1s ease;
+                    }
+
+                }
+               
+                &:nth-child(2){
+                    opacity: 0.65;
+                 
+                    font-size: $font-size-subTitle;
+                    font-weight: $medium;
+                }
+            }
+        }
+    }
+
+    .icons{
+        svg{
+            margin-inline:4px;
+        }
+    }
+    
+}
