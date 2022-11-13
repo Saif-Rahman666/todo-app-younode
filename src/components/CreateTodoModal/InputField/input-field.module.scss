@@ -1,0 +1,47 @@
+@import "../../../../styles/sass/main.scss";
+
+.input {
+  position: relative;
+  width: 400px;
+  
+  .inputLabel {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    padding: calc($size-bezel * 0.75) calc($size-bezel * 1.5);
+    margin: calc($size-bezel * 0.75 + 3px) calc($size-bezel * 0.5);
+    //   background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: white;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  .inputField {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid currentColor;
+    padding: calc($size-bezel * 1.5) calc($size-bezel * 2.5);
+    color: currentColor;
+    background: transparent;
+    border-radius: $size-radius;
+
+    //   &:focus {
+    //     border-color: black;
+    //     background-color: black;
+    //   }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .inputLabel {
+        z-index: 1;
+        transform: translate(0.25rem, -65%) scale(0.8);
+        color: $primary-color;
+      }
+    }
+  }
+}

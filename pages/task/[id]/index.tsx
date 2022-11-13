@@ -1,9 +1,26 @@
-import React from 'react'
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import TodoDetails from "../../../src/components/TodoDetails/TodoDetails";
+import useStore from "../../../src/store";
 
 const Task = () => {
-  return (
-    <div>Task</div>
-  )
-}
+  // Query Parameter
+  const router = useRouter();
+  const { id } = router.query;
+  // Store
+  const todoStore = useStore();
+  // Fetch Details
+  useEffect(() => {
+    if (id) {
+      todoStore.getTaskDetails(Number(id));
+    }
+  }, [id]);
 
-export default Task
+  return (
+    <>
+      <TodoDetails todo={todoStore.taskDetails} />
+    </>
+  );
+};
+
+export default Task;

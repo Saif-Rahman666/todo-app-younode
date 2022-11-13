@@ -1,0 +1,43 @@
+@import "../../../styles/sass/main.scss";
+
+.detailsContainer {
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: fit-content;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(10px);
+  border: 1px solid #eaeaea;
+  box-shadow: 2px 2px 5px #d0d0d0;
+  border-radius: 5px;
+
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    color: $primary-color;
+    border-bottom: 2px solid #eaeaea;
+  }
+  p {
+    font-size: $font-size-title;
+    font-weight: $semi-bold;
+    text-align: center;
+    color: #636363;
+  }
+  .deadlineText {
+    font-size: 0.8rem;
+    font-weight: $regular;
+    color: #7a7a7a;
+  }
+}
